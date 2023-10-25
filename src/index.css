@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 10px;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay {
+  opacity: 1;
+}
+
+
+.content-details {
+  position: absolute;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+
+
+.fadeIn-right {
+  left: 80%;
+}
+
+/*# sourceMappingURL=index.css.map */
+
+
+.textShadowText {
+  text-shadow: 5px 5px 20px blue;
+  font-weight: bold;
+}
+
+.dashboardBigDivs {
+  background: #10224A;
+  color: white;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* /////// DASHBOARD */
+
+:root {
+  --translateWay: 50px;
+  --animationDr:5s;
+}
+
+.animationTextDiv h1:nth-child(1){
+  animation-duration:var(--animationDr) ;
+  animation-timing-function: linear;
+  animation-name: animateionText1;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  
+}
+@keyframes animateionText1{
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(var(--translateWay));
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+.animationTextDiv h1:nth-child(2){
+  animation-duration:var(--animationDr) ;
+  margin-top: 20px;
+  animation-timing-function: linear;
+  animation-name: animateionText2;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse; 
+  transform: rotateY(-30px);
+
+}
+@keyframes animateionText2{
+  0%{
+    transform: translateX(var(--translateWay));
+  }
+  50%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(var(--translateWay));
+  }
+}
